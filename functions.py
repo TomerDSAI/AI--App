@@ -395,7 +395,7 @@ def final_evaluation(model,X_train,X_test,y_train ,y_test,metric):
     train_score = recall_score(y_train,y_train_pred,average = "macro")
   elif metric == "precision":
     score = precision_score(y_test,y_pred , average = "macro" )
-    train_score = precision_score(y_train,y_train_pred,, average = "macro")
+    train_score = precision_score(y_train,y_train_pred, average = "macro")
   elif metric == "f1":
     score = f1_score(y_test,y_pred , average = "macro")
     train_score = f1_score(y_train,y_train_pred, average = "macro")
