@@ -392,14 +392,14 @@ def final_evaluation(model,X_train,X_test,y_train ,y_test,metric):
     train_score = accuracy_score(y_train,y_train_pred)
     return(f"the final {metric} on the test set is {score*100}% and on the training set is {train_score*100}%")
   elif metric == "recall":
-    score = recall_score(y_test,y_pred)
+    score = recall_score(y_test,y_pred , average = "weighted")
     train_score = recall_score(y_train,y_train_pred)
     return(f"the final {metric} on the test set is {score*100}% and on the training set is {train_score*100}%")
   elif metric == "precision":
-    score = precision_score(y_test,y_pred)
+    score = precision_score(y_test,y_pred , average = "weighted" )
     train_score = precision_score(y_train,y_train_pred)
     return(f"the final {metric} on the test set is {score*100}% and on the training set is {train_score*100}%")
   elif metric == "f1":
-    score = f1_score(y_test,y_pred)
+    score = f1_score(y_test,y_pred , average = "weighted")
     train_score = f1_score(y_train,y_train_pred)
     return(f"the final {metric} on the test set is {score*100}% and on the training set is {train_score*100}%")
