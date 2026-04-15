@@ -8,7 +8,6 @@ import streamlit as st
 import yaml
 from yaml.loader import SafeLoader
 import streamlit_authenticator as stauth
-
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score, confusion_matrix, ConfusionMatrixDisplay, classification_report
 from sklearn.model_selection import train_test_split, cross_validate, cross_val_score, validation_curve, GridSearchCV, KFold
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder, OneHotEncoder
@@ -846,7 +845,7 @@ def make_model():
                 'kernel': ['linear', 'poly', 'rbf', 'sigmoid']
             }
             nu_range = st.text_input("Range for nu (default: 0.05,1.0,0.05)", placeholder="example: 0.1 , 0.9 , 0.1 (from 0.1 to 0.9 with jumps of 0.1)", key="svm_nu_input").split(',')
-            kernel_range = st.selectbox("Kernel", options=['linear', 'poly', 'rbf', 'sigmoid'], key="svm_kernel_input")
+            kernel_range = st.multiselect("Kernel", options=['linear', 'poly', 'rbf', 'sigmoid'], key="svm_kernel_input")
             def _try_float(val, default):
                 try:
                     return float(val.strip())
