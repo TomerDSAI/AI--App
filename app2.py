@@ -19,7 +19,7 @@ from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 
 import functions
-# 1. Create your data
+
 st.set_page_config(
     page_title="AI Model Maker",
     page_icon="🤖",
