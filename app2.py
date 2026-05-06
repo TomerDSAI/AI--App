@@ -1175,7 +1175,8 @@ authenticator = stauth.Authenticate(
 authenticator.login(location='main')
 
 # Then check the status using session_state
-if st.session_state["authentication_status"]:
+#st.session_state["authentication_status"]
+if True:
     st.sidebar.write(f'Welcome, *{st.session_state["name"]}*')
     authenticator.logout('Logout', 'sidebar')
     st.title("AI Model Maker")
